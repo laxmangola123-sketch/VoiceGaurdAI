@@ -5,3 +5,4 @@ numpy
 soundfile
 scikit-learn
 langdetect
+gunicorn
