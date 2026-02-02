@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+}
+
+header h1 {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+header p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.upload-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.file-upload {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+#audioFile {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.upload-btn {
+    display: block;
+    padding: 1rem 2rem;
+    background: #4CAF50;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px dashed transparent;
+}
+
+.upload-btn:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
+.record-section {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.record-btn, .stop-btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.record-btn {
+    background: #ff4444;
+    color: white;
+    min-width: 140px;
+}
+
+.record-btn:hover:not(:disabled) {
+    background: #cc0000;
+    transform: scale(1.05);
+}
+
+.stop-btn {
+    background: #666;
+    color: white;
+}
+
+.stop-btn:hover:not(:disabled) {
+    background: #555;
+}
+
+.audio-player {
+    margin: 1.5rem 0;
+}
+
+.audio-player audio {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.results {
+    margin-top: 2rem;
+}
+
+.result-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid;
+}
+
+.result-safe {
+    border-left-color: #4CAF50;
+}
+
+.result-fraud {
+    border-left-color: #f44336;
+}
+
+.result-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.result-details {
+    color: #666;
+    line-height: 1.6;
+}
+
+.confidence-bar {
+    background: #e0e0e0;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.confidence-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #f44336, #ff9800, #4CAF50);
+    transition: width 0.5s ease;
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .record-section {
+        flex-direction: column;
+    }
+}

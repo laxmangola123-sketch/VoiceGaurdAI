@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Voice Fraud Detector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛡️ AI Voice Fraud Detector</h1>
+            <p>Detects fake voices in Hindi, English, Robotic, Telugu & Malayalam</p>
+        </header>
+
+        <div class="upload-section">
+            <div class="file-upload">
+                <input type="file" id="audioFile" accept="audio/*" />
+                <label for="audioFile" class="upload-btn">
+                    📁 Choose Audio File
+                </label>
+            </div>
+            
+            <div class="record-section">
+                <button id="recordBtn" class="record-btn">🎤 Record Voice</button>
+                <button id="stopBtn" class="stop-btn" disabled>⏹️ Stop</button>
+            </div>
+        </div>
+
+        <div id="audioPlayer" class="audio-player hidden">
+            <audio id="player" controls></audio>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Analyzing voice... Please wait</p>
+        </div>
+
+        <div id="results" class="results hidden">
+            <div id="resultCard" class="result-card"></div>
+            <div class="confidence-bar">
+                <div id="confidenceFill" class="confidence-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
